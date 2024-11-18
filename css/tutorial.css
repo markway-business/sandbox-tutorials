@@ -1,0 +1,199 @@
+.main-container {
+    display: flex;
+    justify-content: start;
+    height: 100%;
+    /* margin: 0 auto; */
+    padding: 80px 40px;
+}
+
+.sidebar {
+    position: relative;
+    padding: 60px 20px;
+    background-color: #f7f7f7;
+    border-right: 1px solid #ddd;
+}
+
+.sidebar h2 {
+    font-size: 18px;
+    color: #333;
+    text-align: start;
+}
+
+#markdown-content {
+    padding: 10px;
+    border-radius: 8px;
+    text-align: left;
+    line-height: 1.8;
+    font-size: 1em;
+    color: #37352f;
+}
+
+
+/* Estilo geral para a área de conteúdo */
+.content-tutorial {
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+    background-color: #f7f6f3;
+}
+
+/* Container para centralizar o conteúdo */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos de cabeçalhos */
+#markdown-content h1 {
+    font-size: 1.8em;
+    font-weight: 600;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+    color: #333;
+    border-bottom: 1px solid #e3e2df;
+    padding-bottom: 0.3em;
+}
+
+#markdown-content h2 {
+    font-size: 1.5em;
+    font-weight: 500;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+    color: #333;
+    border-bottom: 1px solid #e3e2df;
+    padding-bottom: 0.3em;
+}
+
+#markdown-content h3 {
+    font-size: 1.3em;
+    font-weight: 500;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+    color: #333;
+}
+
+/* Blocos de citação */
+#markdown-content blockquote {
+    border-left: 3px solid #d1d1d1;
+    padding-left: 15px;
+    margin: 1em 0;
+    color: #666;
+    font-style: italic;
+    background-color: #f9f9f9;
+    padding: 10px;
+}
+
+/* Listas */
+#markdown-content ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+#markdown-content ol {
+    list-style-type: decimal;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+#markdown-content li {
+    margin: 5px 0;
+}
+
+/* Imagens */
+#markdown-content img {
+    display: block;
+    margin: 10px 0; /* Adiciona um espaço acima e abaixo da imagem */
+    max-width: 100%; /* Garante que a imagem não ultrapasse a largura do conteúdo */
+    height: auto;
+}
+
+/* Links */
+#markdown-content a {
+    color: #3b72f1;
+    text-decoration: none;
+}
+
+#markdown-content a:hover {
+    text-decoration: underline;
+}
+
+/* Código em linha */
+#markdown-content code {
+    background-color: #f1f1f1;
+    color: #d6336c;
+    padding: 2px 4px;
+    border-radius: 4px;
+    font-family: Consolas, monospace;
+}
+
+/* Blocos de código */
+#markdown-content pre {
+    background-color: #f3f4f6;
+    color: #37352f;
+    padding: 15px;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-family: Consolas, monospace;
+    margin: 1em 0;
+}
+
+/* Tabelas */
+#markdown-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+#markdown-content th, #markdown-content td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+#markdown-content th {
+    background-color: #f5f5f5;
+    font-weight: bold;
+}
+
+#markdown-content p,
+#markdown-content ul,
+#markdown-content ol,
+#markdown-content hr {
+    margin-bottom: 15px; /* Adiciona um espaço abaixo de parágrafos, listas e separadores */
+}
+
+#markdown-content li {
+    margin-bottom: 5px; /* Adiciona um pequeno espaço entre os itens de lista */
+}
+
+code {
+    background-color: #f5f2e9; /* Fundo para código inline */
+    color: #d69d56;           /* Cor do texto */
+    padding: 3px 6px;         /* Espaçamento interno */
+    border-radius: 4px;       /* Bordas arredondadas */
+    font-family: monospace;   /* Fonte monoespaçada */
+    font-size: 0.95em;
+}
+
+pre {
+    background-color: #2d2d2d; /* Fundo mais escuro para blocos de código */
+    color: #f8f8f2;            /* Texto claro para contraste */
+    padding: 15px;             /* Espaçamento interno */
+    border-radius: 8px;        /* Bordas arredondadas */
+    overflow-x: auto;          /* Scroll horizontal se o código for longo */
+    font-family: monospace;
+    font-size: 0.95em;
+    white-space: pre-wrap;     /* Quebra de linha se necessário */
+    margin: 1em 0;             /* Espaçamento superior e inferior */
+}
+
+pre code {
+    color: inherit;            /* Herdar cor do <pre> */
+}

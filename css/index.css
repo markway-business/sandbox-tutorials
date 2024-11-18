@@ -1,0 +1,38 @@
+
+.section {
+    margin-bottom: 20px;
+}
+.section h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+.dive-in {
+    background-color: #f0f0f0;
+    padding: 15px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+.dive-in pre {
+    background-color: #e0e0e0;
+    padding: 10px;
+    font-family: monospace;
+    overflow-x: auto;
+}
+.tutorials {
+    display: flex;
+    justify-content: space-between;
+}
+.tutorials div {
+    width: 45%;
+}
+.tutorials h3 {
+    text-align: left;
+}
+.tutorials ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: left;
+}
+.tutorials ul li {
+    margin-bottom: 10px;
+}

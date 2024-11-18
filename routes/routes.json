@@ -1,0 +1,59 @@
+{
+  "categories": [
+    {
+      "title": "Introdução",
+      "topics": [
+        {
+          "title": "▶  Explorando o Universo da Tecnisys e da Sandbox",
+          "subtopics": [
+            { "name": "Descubra o que é a Tecnisys", "file": "tutorial1.1.md" },
+            { "name": "Por dentro da Tecnisys Data Platform", "file": "tutorial1.2.md" },
+            { "name": "Sandbox TDP: Seu Laboratório de Inovação", "file": "tutorial1.3.md" }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "DevOps/SRE",
+      "topics": [
+        {
+          "title": "▶  Comece com o Pé Direito: Deploy e Instalação da Sandbox",
+          "subtopics": [
+            { "name": "Prepare o Terreno: Pré-requisitos Essenciais", "file": "tutorial2.1.md" },
+            { "name": "Faça o Download e Desvende o Poder da Sandbox", "file": "tutorial2.2.md" },
+            { "name": "Configurando o VirtualBox", "file": "tutorial2.3.md" },
+            { "name": "Configurando o Host Local com o Domínio TDP", "file": "tutorial2.4.md" },
+            { "name": "Mergulhe nos Recursos: Explorando a Sandbox e Seus Serviços", "file": "tutorial2.5.md" }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Data Engineer",
+      "topics": [
+        {
+          "title": "▶  Fluxos Automatizados: Integração de Dados com Apache NiFi",
+          "subtopics": [
+            { "name": "Do CSV ao Hive: Um Guia de Importação Simplificada", "file": "tutorial4.md" },
+            { "name": "Controle Total: Monitorando Seus Fluxos de Dados", "file": "tutorial4.md" }
+          ]
+        },
+        {
+          "title": "▶  Domine Seus Dados: Consultas e Análises com Apache Hive",
+          "subtopics": [
+            { "name": "Construa a Base: Criando Tabelas e Executando Consultas SQL", "file": "tutorial5.md" },
+            { "name": "Liberte o Potencial: Junção de Dados e Agregações Poderosas", "file": "tutorial5.md" }
+          ]
+        },
+        {
+          "title": "▶  Transforme Dados em Insights: Visualização com Apache Superset",
+          "subtopics": [
+            { "name": "Conectando Hive: O Elo Perdido para suas Visualizações", "file": "tutorial5.md" },
+            { "name": "Dashboards em Ação: Configure e Impressione", "file": "tutorial5.md" },
+            { "name": "Histórias Visuais: Criação de Gráficos e Relatórios Interativos", "file": "tutorial5.md" }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conteúdo do Tutorial</title>
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/tutorial.css">
+    <link rel="stylesheet" href="/css/sandboxtutoriais.css">
+    <style>
+        body {
+            background-color: #f5f5f5;
+            font-family: Arial, sans-serif;
+            margin: 80px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo-container">
+                <a href="https://www.tecnisys.com.br/">
+                    <img src="/images/logo_principal_negativo.svg" alt="TecniSys Logo">
+                </a>
+                <span class="divider"></span>
+                <a href="index.html" class="main-title">SANDBOX TDP 2.2</a>
+            </div>
+        </div>
+    </header>
+    <div class="download-sandbox">
+        <div>
+            <div>
+                <span class="title">Pronto para começar?</span>
+                <span class="divider"></span>
+                <a class="link-download" href="https://www.tecnisys.com.br/">
+                DOWNLOAD SANDBOX
+                </a>
+          </div>
+        </div>
+      </div>
+    <div class="main-container">
+        <!-- Botão de Voltar -->
+        <aside class="sidebar">
+            <button onclick="window.location.href='sandboxtutoriais.html'" class="back-button">← Voltar</button>
+            
+            <!-- Sumário à esquerda -->
+            <div id="toc">
+                <!-- O sumário será carregado aqui a partir do JSON -->
+            </div>
+        </aside>
+        
+        <!-- Conteúdo do tutorial à direita -->
+        <div class="content-tutorial">
+            <div class="container">
+                <div id="markdown-content">
+                    <!-- O conteúdo do Markdown será carregado aqui -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/js/sandboxtutoriais.js"></script>
+</body>
+</html>
