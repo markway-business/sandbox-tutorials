@@ -55,7 +55,7 @@ Inicie as aplicação clicando em `Actions → Restart All`
 ## **Acesso via SSH:**
 Para usuários avançados, conecte-se ao terminal da sandbox via SSH na porta `2122`:
 
-```ssh -p 2122 devopstdp@<seu-ip>
+```ssh -p 2122 devopstdp@localhost
 senha:tecnisystdp22
 ```
 
