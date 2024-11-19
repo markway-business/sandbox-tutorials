@@ -118,19 +118,18 @@ function loadMarkdown(markdownFile) {
 function convertMarkdownToHTML(markdownText) {
     // Processa tabelas
     markdownText = markdownText.replace(
-        /\|([^|]+)\|(?:\s*\|[^|]+)+\|/gm, // Detecta linhas de tabela
-        (match, headerRow, offset, fullText) => {
-            // Encontra início e fim da tabela
-            const lines = fullText.split("\n");
-            const start = lines.findIndex(line => line.includes(headerRow));
-            const end = start + lines.slice(start).findIndex(line => !line.includes("|"));
+        /((?:[^\n|]+\n)*)(\|.*\|(?:\n\|.*\|)+)/gm, // Detecta blocos de texto e tabela
+        (match, precedingText, tableBlock) => {
+            // Processa o bloco de tabela
+            const lines = tableBlock.trim().split("\n");
+            const tableHTML = parseTableBlock(lines);
 
-            const tableLines = lines.slice(start, end + 1);
-            return parseTableBlock(tableLines);
+            // Retorna o texto antes da tabela, seguido pela tabela convertida
+            return `${precedingText}${tableHTML}`;
         }
     );
 
-    // Processa outros elementos Markdown (manter a lógica original)
+    // Processa outros elementos Markdown (mantendo a lógica original)
     return markdownText
         .replace(/^### (.*$)/gim, '<h3>$1</h3>')
         .replace(/^## (.*$)/gim, '<h2>$1</h2>')
@@ -152,8 +151,8 @@ function convertMarkdownToHTML(markdownText) {
 // Função para interpretar uma tabela Markdown em linhas e gerar HTML
 function parseTableBlock(lines) {
     const header = lines[0];
-    const divider = lines[1];
-    const rows = lines.slice(2);
+    const dividerIndex = lines.findIndex(line => /^[-\s|]+$/.test(line.trim()));
+    const rows = dividerIndex > -1 ? lines.slice(dividerIndex + 1) : lines.slice(1);
 
     // Cria cabeçalho
     const headers = header.split("|").slice(1, -1).map(h => `<th>${h.trim()}</th>`).join("");
@@ -167,3 +166,6 @@ function parseTableBlock(lines) {
 
     return `<table>${tableHead}<tbody>${tableBody}</tbody></table>`;
 }
+
+
+
