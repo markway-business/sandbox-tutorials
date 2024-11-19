@@ -32,25 +32,13 @@
       "title": "Data Engineer",
       "topics": [
         {
-          "title": "▶  Fluxos Automatizados: Integração de Dados com Apache NiFi",
+          "title": "▶  Caso de uso: Projeto de Dados com Arquitetura Medallion",
           "subtopics": [
-            { "name": "Do CSV ao Hive: Um Guia de Importação Simplificada", "file": "tutorial4.md" },
-            { "name": "Controle Total: Monitorando Seus Fluxos de Dados", "file": "tutorial4.md" }
-          ]
-        },
-        {
-          "title": "▶  Domine Seus Dados: Consultas e Análises com Apache Hive",
-          "subtopics": [
-            { "name": "Construa a Base: Criando Tabelas e Executando Consultas SQL", "file": "tutorial5.md" },
-            { "name": "Liberte o Potencial: Junção de Dados e Agregações Poderosas", "file": "tutorial5.md" }
-          ]
-        },
-        {
-          "title": "▶  Transforme Dados em Insights: Visualização com Apache Superset",
-          "subtopics": [
-            { "name": "Conectando Hive: O Elo Perdido para suas Visualizações", "file": "tutorial5.md" },
-            { "name": "Dashboards em Ação: Configure e Impressione", "file": "tutorial5.md" },
-            { "name": "Histórias Visuais: Criação de Gráficos e Relatórios Interativos", "file": "tutorial5.md" }
+            { "name": "Introdução", "file": "tutorial3.1.md" },
+            { "name": "Design da Arquitetura Medallion", "file": "tutorial3.2.md" },
+            { "name": "Coleta e Ingestão de Dados", "file": "tutorial3.3.md" },
+            { "name": "Transformação de Dados", "file": "tutorial3.4.md" },
+            { "name": "Visualização de Dados", "file": "tutorial3.5.md" }
           ]
         }
       ]
