@@ -116,6 +116,21 @@ function loadMarkdown(markdownFile) {
 }
 
 function convertMarkdownToHTML(markdownText) {
+    // Processa tabelas
+    markdownText = markdownText.replace(
+        /\|([^|]+)\|(?:\s*\|[^|]+)+\|/gm, // Detecta linhas de tabela
+        (match, headerRow, offset, fullText) => {
+            // Encontra início e fim da tabela
+            const lines = fullText.split("\n");
+            const start = lines.findIndex(line => line.includes(headerRow));
+            const end = start + lines.slice(start).findIndex(line => !line.includes("|"));
+
+            const tableLines = lines.slice(start, end + 1);
+            return parseTableBlock(tableLines);
+        }
+    );
+
+    // Processa outros elementos Markdown (manter a lógica original)
     return markdownText
         .replace(/^### (.*$)/gim, '<h3>$1</h3>')
         .replace(/^## (.*$)/gim, '<h2>$1</h2>')
@@ -126,10 +141,29 @@ function convertMarkdownToHTML(markdownText) {
         .replace(/!\[(.*?)\]\((.*?)\)/gim, "<img alt='$1' src='$2' />")
         .replace(/\[(.*?)\]\((.*?)\)/gim, "<a href='$2'>$1</a>")
         .replace(/^\s*-\s+(.*)/gm, '<li>$1</li>')
-        .replace(/(<li>.*<\/li>)(?!\s*<li>)/g, '$1</ul>')      // Fecha a lista no final
-        .replace(/(<li>)/, '<ul>$1')                           // Abre a lista no início
-        .replace(/^---$/gm, '')                                // Remove linha horizontal "---"
-        .replace(/```([\s\S]*?)```/g, '<pre><code>$1</code></pre>') // Blocos de código com 3 crases
-        .replace(/`([^`]+)`/g, '<code>$1</code>')              // Código inline com 1 crase
-        .replace(/\n$/gim, '<br />');                          // Quebra de linha
+        .replace(/(<li>.*<\/li>)(?!\s*<li>)/g, '$1</ul>')      
+        .replace(/(<li>)/, '<ul>$1')                           
+        .replace(/^---$/gm, '')                                
+        .replace(/```([\s\S]*?)```/g, '<pre><code>$1</code></pre>') 
+        .replace(/`([^`]+)`/g, '<code>$1</code>')              
+        .replace(/\n$/gim, '<br />');                          
+}
+
+// Função para interpretar uma tabela Markdown em linhas e gerar HTML
+function parseTableBlock(lines) {
+    const header = lines[0];
+    const divider = lines[1];
+    const rows = lines.slice(2);
+
+    // Cria cabeçalho
+    const headers = header.split("|").slice(1, -1).map(h => `<th>${h.trim()}</th>`).join("");
+    const tableHead = `<thead><tr>${headers}</tr></thead>`;
+
+    // Cria linhas de dados
+    const tableBody = rows.map(row => {
+        const cells = row.split("|").slice(1, -1).map(c => `<td>${c.trim()}</td>`).join("");
+        return `<tr>${cells}</tr>`;
+    }).join("");
+
+    return `<table>${tableHead}<tbody>${tableBody}</tbody></table>`;
 }
