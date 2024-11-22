@@ -118,7 +118,7 @@ function loadMarkdown(markdownFile) {
 function convertMarkdownToHTML(markdownText) {
     // Processa tabelas
     markdownText = markdownText.replace(
-        /((?:[^\n|]+\n)*)(\|.*\|(?:\n\|.*\|)+)/gm, // Detecta blocos de texto e tabela
+        /((?:.*\n)*?)((?:\|.*\|\n)+)/gm, // Detecta blocos de texto e tabela
         (match, precedingText, tableBlock) => {
             // Processa o bloco de tabela
             const lines = tableBlock.trim().split("\n");
@@ -131,6 +131,7 @@ function convertMarkdownToHTML(markdownText) {
 
     // Processa outros elementos Markdown (mantendo a lógica original)
     return markdownText
+        .replace(/^#### (.*$)/gim, '<h4>$1</h4>')
         .replace(/^### (.*$)/gim, '<h3>$1</h3>')
         .replace(/^## (.*$)/gim, '<h2>$1</h2>')
         .replace(/^# (.*$)/gim, '<h1>$1</h1>')
@@ -140,10 +141,7 @@ function convertMarkdownToHTML(markdownText) {
         .replace(/!\[(.*?)\]\((.*?)\)/gim, "<img alt='$1' src='$2' />")
         .replace(/\[(.*?)\]\((.*?)\)/gim, "<a href='$2'>$1</a>")
         .replace(/^\s*-\s+(.*)/gm, '<li>$1</li>')
-        .replace(/(<li>.*<\/li>)(?!\s*<li>)/g, '$1</ul>')      
-        .replace(/(<li>)/, '<ul>$1')                           
-        .replace(/^---$/gm, '')                                
-        .replace(/```([\s\S]*?)```/g, '<pre><code>$1</code></pre>') 
+        .replace(/```\n([\s\S]*?)\n```/g, '<pre><code>$1</code></pre>')
         .replace(/`([^`]+)`/g, '<code>$1</code>')              
         .replace(/\n$/gim, '<br />');                          
 }
