@@ -10,6 +10,8 @@ Utilizaremos os seguintes processadores no Nifi:
 GetFile -> UpdateAttribute -> PutHDFS
 ```
 
+    ![Processos NiFi](image1.png)
+
 **GetFile**: recupera o arquivo `Product.csv` do diretório `processed`.
 | Configuração | Campo            | Valor                          | Descrição                                               |
 |------------------|----------------------|------------------------------------|-------------------------------------------------------------|

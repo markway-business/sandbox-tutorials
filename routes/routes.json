@@ -6,9 +6,10 @@
         {
           "title": "▶  Explorando o Universo da Tecnisys e da Sandbox",
           "subtopics": [
-            { "name": "Descubra o que é a Tecnisys", "file": "tutorial1.1.md" },
+            { "name": "Descubra quem é a Tecnisys", "file": "tutorial1.1.md" },
             { "name": "Por dentro da Tecnisys Data Platform", "file": "tutorial1.2.md" },
-            { "name": "Sandbox TDP: Seu Laboratório de Inovação", "file": "tutorial1.3.md" }
+            { "name": "Sandbox TDP: Seu Laboratório de Inovação", "file": "tutorial1.3.md" },
+            { "name": "Roteiro Recomendado para Utilização da Sandbox", "file": "tutorial1.4.md" }
           ]
         }
       ]

@@ -47,13 +47,24 @@ LOCATION '/gold';
 - Colunas Selecionadas: Representam atributos principais do produto, como Name, Color, ListPrice, entre outros.
 
 ## Validando a Tabela
-Após criar a tabela, valide se os dados estão acessíveis:
-1. Execute o seguinte comando no console do Hive:
+Após criar a tabela, valide se a tabela foi criada corretamente:
+1. Execute o seguinte comando para verificar as tabelas criadas:
+```
+show tables;
+```
+    ![image1](image1.png)
+
+2. Execute o seguinte comando para verificar a descrição da tabela:
+```
+desc gold_product_tb;
+```
+    ![image2](image2.png)
+
+3. Execute o seguinte e valide se os dados estão acessíveis:
 ```
 select * from gold_product_tb limit 10;
 ```
-2. Resultado esperado:
-    ![image.png](image1.png)
+    ![image3.png](image3.png)
 
 Com essas etapas, você configurou com sucesso uma tabela gold no Hive, proporcionando acesso a dados otimizados e prontos para análises avançadas. Essa estrutura será a base para criar dashboards dinâmicos e gerar insights estratégicos. 
 

@@ -7,6 +7,9 @@ Neste tópico, configuraremos um fluxo no NiFi para transformar e mover os dados
 ```
 GetHDFS -> UpdateAttribute -> RouteOnAttribute -> ReplaceText (1) -> UpdateAttribute (2) -> ExecuteScript -> ReplaceText (2) -> ConvertRecord -> UpdateAttribute (3) -> UpdateAttribute (4) -> PutHDFS
 ```
+
+    ![Processos NiFi](image1.png)
+
 ## Controller Services
 Os processadores no fluxo dependem de dois **Controller Services** configurados para gerenciar leitura e escrita de registros. Abaixo estão suas definições e configurações.
 
@@ -102,7 +105,6 @@ Os processadores no fluxo dependem de dois **Controller Services** configurados 
 | Relationships | success | - | Conexão para fluxo em caso de sucesso |
 
 
-
 **8. ConvertRecord**: Converte arquivos CSV para o formato Parquet.
 
 | Configuração | Campo | Valor | Descrição |
@@ -110,7 +112,6 @@ Os processadores no fluxo dependem de dois **Controller Services** configurados 
 | Properties | Record Reader | `CSVReader` | Serviço para leitura de arquivos CSV |
 |  | Record Writer | `ParquetRecordSetWriter` | Serviço para gravar em formato Parquet |
 | Relationships | success | - | Conexão para fluxo em caso de sucesso |
-
 
 
 **9. UpdateAttribute (3)**: Configura o diretório de saída no HDFS com base na estrutura lógica.
@@ -121,7 +122,6 @@ Os processadores no fluxo dependem de dois **Controller Services** configurados 
 | Relationships | success | - | Conexão para fluxo em caso de sucesso |
 
 
-
 **10. UpdateAttribute (4)**: Adiciona atributos específicos para facilitar a organização dos arquivos.
 
 | Configuração | Campo | Valor | Descrição |
@@ -129,7 +129,6 @@ Os processadores no fluxo dependem de dois **Controller Services** configurados 
 | Properties | directory | `${current_date}/${output_directory}` | Define a hierarquia de saída baseada na data |
 | Relationships | success | - | Conexão para fluxo em caso de sucesso |
 
----
 
 **11. PutHDFS**: Grava os arquivos convertidos no HDFS na camada Silver.
 
@@ -138,7 +137,6 @@ Os processadores no fluxo dependem de dois **Controller Services** configurados 
 | Properties | Directory | `/silver/${directory}` | Diretório de saída na camada Silver |
 |  | Conflict Resolution | `replace` | Substitui arquivos existentes |
 | Relationships | success | - | Conexão para fluxo em caso de sucesso |
-
 
 
 Após a execução do fluxo, os arquivos estarão na camada Silver no formato **Parquet**, organizados por data.

@@ -1,5 +1,12 @@
 # **Orquestração de Dados na Camada Bronze com NiFi e HDFS (parte 1)**
 
+## Importação dos Templates NiFi (Pipeline completo)
+Todos os passos para a construção do pipeline ate a construção da gold podem se importadas através do arquivo tal:
+
+Telas da importação:
+
+A elaboração detalhada de todos os passos está descrito a seguir.
+
 ## Incoming to Processed
 Neste tópico, configuraremos um fluxo no NiFi para mover os dados do diretório `incoming` para o diretório `processed` no sistema de arquivos local. Este processo organiza os arquivos por data, garantindo uma estrutura clara para o histórico dos dados. Abaixo é possível verificar a estrutura de diretórios previamente montada no módulo anterior. 
 
@@ -9,6 +16,8 @@ Utilizaremos os seguintes processadores no Nifi:
 ```
 GetFile -> UpdateAttribute -> PutFile
 ```
+
+    ![Processos NiFi](image1.png)
 
 **GetFile**: recupera o arquivo `Product.csv` do diretório `incoming`.
 | Configuração | Campo            | Valor                          | Descrição                                               |

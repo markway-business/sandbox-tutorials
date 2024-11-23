@@ -12,6 +12,8 @@ Utilizaremos os seguintes processadores no Nifi:
 GetHDFS -> RouteOnAttribute -> ConvertRecord -> JoltTransformJson -> ConvertRecord -> PutHDFS
 ```
 
+    ![Processos NiFi](image1.png)
+
 **GetHDFS**: recupera o arquivo `Product.parquet` do diretório `silver` no HDFS.
 | Configuração | Campo            | Valor                          | Descrição                                               |
 |------------------|----------------------|------------------------------------|-------------------------------------------------------------|
