@@ -118,20 +118,20 @@ function loadMarkdown(markdownFile) {
 function convertMarkdownToHTML(markdownText) {
     // Processa tabelas
     markdownText = markdownText.replace(
-        /\|([^|]+)\|(?:\s*\|[^|]+)+\|/gm, // Detecta linhas de tabela
-        (match, headerRow, offset, fullText) => {
-            // Encontra início e fim da tabela
-            const lines = fullText.split("\n");
-            const start = lines.findIndex(line => line.includes(headerRow));
-            const end = start + lines.slice(start).findIndex(line => !line.includes("|"));
+        /((?:.*\n)*?)((?:\|.*\|\n)+)/gm, // Detecta blocos de texto e tabela
+        (match, precedingText, tableBlock) => {
+            // Processa o bloco de tabela
+            const lines = tableBlock.trim().split("\n");
+            const tableHTML = parseTableBlock(lines);
 
-            const tableLines = lines.slice(start, end + 1);
-            return parseTableBlock(tableLines);
+            // Retorna o texto antes da tabela, seguido pela tabela convertida
+            return `${precedingText}${tableHTML}`;
         }
     );
 
-    // Processa outros elementos Markdown (manter a lógica original)
+    // Processa outros elementos Markdown (mantendo a lógica original)
     return markdownText
+        .replace(/^#### (.*$)/gim, '<h4>$1</h4>')
         .replace(/^### (.*$)/gim, '<h3>$1</h3>')
         .replace(/^## (.*$)/gim, '<h2>$1</h2>')
         .replace(/^# (.*$)/gim, '<h1>$1</h1>')
@@ -141,10 +141,7 @@ function convertMarkdownToHTML(markdownText) {
         .replace(/!\[(.*?)\]\((.*?)\)/gim, "<img alt='$1' src='$2' />")
         .replace(/\[(.*?)\]\((.*?)\)/gim, "<a href='$2'>$1</a>")
         .replace(/^\s*-\s+(.*)/gm, '<li>$1</li>')
-        .replace(/(<li>.*<\/li>)(?!\s*<li>)/g, '$1</ul>')      
-        .replace(/(<li>)/, '<ul>$1')                           
-        .replace(/^---$/gm, '')                                
-        .replace(/```([\s\S]*?)```/g, '<pre><code>$1</code></pre>') 
+        .replace(/```\n([\s\S]*?)\n```/g, '<pre><code>$1</code></pre>')
         .replace(/`([^`]+)`/g, '<code>$1</code>')              
         .replace(/\n$/gim, '<br />');                          
 }
@@ -152,8 +149,8 @@ function convertMarkdownToHTML(markdownText) {
 // Função para interpretar uma tabela Markdown em linhas e gerar HTML
 function parseTableBlock(lines) {
     const header = lines[0];
-    const divider = lines[1];
-    const rows = lines.slice(2);
+    const dividerIndex = lines.findIndex(line => /^[-\s|]+$/.test(line.trim()));
+    const rows = dividerIndex > -1 ? lines.slice(dividerIndex + 1) : lines.slice(1);
 
     // Cria cabeçalho
     const headers = header.split("|").slice(1, -1).map(h => `<th>${h.trim()}</th>`).join("");
@@ -167,3 +164,6 @@ function parseTableBlock(lines) {
 
     return `<table>${tableHead}<tbody>${tableBody}</tbody></table>`;
 }
+
+
+

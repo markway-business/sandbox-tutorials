@@ -195,4 +195,5 @@ details ul li a{
 }
 
 a:visited { text-decoration: none; color:inherit; }
+a:link { text-decoration: none; color:inherit; }
 a:hover { text-decoration: underline; color:inherit; }
