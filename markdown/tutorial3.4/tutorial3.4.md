@@ -23,19 +23,19 @@ GetFile -> UpdateAttribute -> PutHDFS
 **UpdateAttribute**: cria o path do diretório em `processed`.
 | Configuração | Campo              | Valor                                      | Descrição                                             |
 |------------------|------------------------|----------------------------------------------|-----------------------------------------------------------|
-| Properties   | `relativePath`         | `${absolute.path:substringAfter('data/edge/processed/')}` | Cria a propriedade `relativePath` com base no caminho absoluto |
-| Relationships| `success`              | -                                            | Fluxo em caso de sucesso                                  |
+| Properties   | relativePath         | `${absolute.path:substringAfter('data/edge/processed/')}` | Cria a propriedade `relativePath` com base no caminho absoluto |
+| Relationships| success              | -                                            | Fluxo em caso de sucesso                                  |
 
 
 **PutFile**: Salva o arquivo no diretório `processed`.
 | Configuração | Campo                     | Valor                                         | Descrição                                             |
 |------------------|-------------------------------|-------------------------------------------------|-----------------------------------------------------------|
-| Properties   | `Hadoop Configuration Resources`                  | `/etc/hadoop/conf/core-site.xml,/etc/hadoop/conf/hdfs-site.xml` | Caminho para os arquivos de configuração do Hadoop necessários para acessar o HDFS                   |
-|                  | `Directory` | `/bronze/${relativePath}`                                       | 	Diretório de destino na camada Bronze, baseado no caminho relativo       |
-|                  | `Conflict resolution Strategy` | `replace`                                          | Substitui arquivos existentes em caso de conflito             |
-|                  | `Writing Strategy` | `Write and rename`                                          | Escreve o arquivo temporariamente e renomeia ao final para evitar corrupção             |
-| Relationships| `success`                    | `terminate`                                     | Finaliza o fluxo em caso de sucesso                      |
-|                  | `failure`                    | `terminate`                                     | Finaliza o fluxo em caso de falha                        |
+| Properties   | Hadoop Configuration Resources                  | `/etc/hadoop/conf/core-site.xml,/etc/hadoop/conf/hdfs-site.xml` | Caminho para os arquivos de configuração do Hadoop necessários para acessar o HDFS                   |
+|                  | Directory | `/bronze/${relativePath}`                                       | 	Diretório de destino na camada Bronze, baseado no caminho relativo       |
+|                  | Conflict resolution Strategy | `replace`                                          | Substitui arquivos existentes em caso de conflito             |
+|                  | Writing Strategy | `Write and rename`                                          | Escreve o arquivo temporariamente e renomeia ao final para evitar corrupção             |
+| Relationships| success                    | `terminate`                                     | Finaliza o fluxo em caso de sucesso                      |
+|                  | failure                    | `terminate`                                     | Finaliza o fluxo em caso de falha                        |
 
  
 Com essas etapas, a camada Bronze estará devidamente configurada, pronta para futuras transformações e processamento. A próxima seção abordará como transformar os dados da Bronze para a camada Silver.  
