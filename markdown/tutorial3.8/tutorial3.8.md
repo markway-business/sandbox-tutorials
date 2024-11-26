@@ -91,5 +91,20 @@ Agora que temos gráficos e tabelas configurados, podemos combiná-los em um das
 > Após organizar os elementos, você pode exportar o dashboard para compartilhar com sua equipe.
 ![Dashboard](image5.png)
 
+Este dashboard oferece uma **visão consolidada e estratégica do portfólio de produtos**, permitindo:
+- Monitorar a distribuição por cores.
+- Identificar os itens mais caros.
+- Analisar o valor total de estoque. 
+
+Ele é uma ferramenta essencial para **equipes de estoque, vendas, marketing e executivos**, pois fornece insights sobre tendências de mercado, preferências de clientes e a relação entre capital imobilizado e demanda. Este dashboard facilita a identificação de padrões e oportunidades, como:
+- Ajustes no planejamento de produção
+- Campanhas para produtos premium 
+- Estratégias para otimizar o estoque e reduzir custos.
+
+Seu valor está em **centralizar informações críticas para tomadas de decisão rápidas e assertivas**. Ele ajuda a melhorar a eficiência operacional, reduzir desperdícios e alinhar as ações da empresa com as demandas do mercado. A persona ideal para utilizá-lo seria uma gerente de estoque e planejamento, que busca equilibrar oferta e demanda, prever tendências e gerar relatórios claros para a liderança. 
+
+Com este dashboard, profissionais podem agir com base em dados confiáveis, garantindo melhores resultados financeiros e maior agilidade na gestão.
+
+
 ## **Conclusão**
 Com este tutorial, você aprendeu a conectar o Hive ao Superset, criar tabelas e gráficos personalizados, e montar um dashboard completo para análises interativas. Agora, você está pronto para transformar dados brutos em insights estratégicos!
