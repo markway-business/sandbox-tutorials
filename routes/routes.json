@@ -22,10 +22,10 @@
           "subtopics": [
             { "name": "Prepare o Terreno: Pré-requisitos Essenciais", "file": "tutorial2.1.md" },
             { "name": "Faça o Download e Desvende o Poder da Sandbox", "file": "tutorial2.2.md" },
-            { "name": "Configurando o VirtualBox", "file": "tutorial2.3.md" },
+            { "name": "Criação do Sandbox TDP", "file": "tutorial2.3.md" },
             { "name": "Configurando o Host Local com o Domínio TDP", "file": "tutorial2.4.md" },
-            { "name": "Mergulhe nos Recursos: Explorando a Sandbox e Seus Serviços", "file": "tutorial2.5.md" },
-            { "name": "Configuração de redirecionamento de portas da Sandbox", "file": "tutorial2.6.md" }
+            { "name": "Guia Prático da Exploração da Sandbox", "file": "tutorial2.5.md" },
+            { "name": "Configuração de Redirecionamento de Portas da Sandbox", "file": "tutorial2.6.md" }
           ]
         }
       ]

@@ -1,4 +1,4 @@
-# Explorando a Sandbox da Plataforma de Dados TDP: Guia Prático
+# Guia Prático da Exploração da Sandbox
 
 ## O que é a Sandbox TDP?
 A sandbox TDP é uma máquina virtual pré-configurada que simula o ambiente da plataforma de dados TDP. Ele permite explorar funcionalidades como:
@@ -21,11 +21,13 @@ Uma vez que a sandbox esteja em execução, você pode acessá-lo pelo navegador
 **Acesse o ambiente web:**
 
 - **Abra o navegador e digite o endereço da sandbox. O padrão geralmente é:**
-```http://localhost:42080
+```
+http://localhost:42080
 ```
 
 - **Caso tenha configurado um domínio local (como vimos no guia de `hosts`), use `sandbox-tdp22.tecnisys.com.br`:**
-```http://sandbox-tdp22.tecnisys.com.br:42080
+```
+http://sandbox-tdp22.tecnisys.com.br:42080
 ```
 
 ### Acessar página inicial do TDP
@@ -55,7 +57,8 @@ Inicie as aplicação clicando em `Actions → Restart All`
 ## **Acesso via SSH:**
 Para usuários avançados, conecte-se ao terminal da sandbox via SSH na porta `2122`:
 
-```ssh -p 2122 devopstdp@localhost
+```
+ssh -p 2122 devopstdp@localhost
 senha:tecnisystdp22
 ```
 

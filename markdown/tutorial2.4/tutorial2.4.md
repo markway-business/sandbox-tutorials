@@ -1,6 +1,6 @@
 # Configurando o Host Local com o Domínio TDP
 
-Ao configurar uma máquina virtual (VM) ou aplicações em ambientes locais, é necessário associar o domínio da máquina ao `localhost`. Isso facilita o redirecionamento de portas e a simulação de ambientes reais sem depender de servidores externos. Vamos aprender como configurar o arquivo `hosts` no Linux e no Windows para associar o IP `127.0.0.1` a um domínio como `sandbox-tdp22.tecnisys.com.br`.
+Ao configurar uma máquina virtual (VM) ou aplicações em ambientes locais, é altamente recomendado associar o domínio da máquina ao `localhost`. Isso facilita o redirecionamento de portas e a simulação de ambientes reais sem depender de servidores externos. Vamos aprender como configurar o arquivo `hosts` no Linux e no Windows para associar o IP `127.0.0.1` a um domínio como `sandbox-tdp22.tecnisys.com.br`.
 
 ## O que é o arquivo `hosts` e por que configurá-lo?
 
@@ -18,17 +18,17 @@ No caso de redirecionamento de portas de uma VM, essa configuração permite ace
     
     Use o comando abaixo para abrir o arquivo no modo de edição:
     
-    ```
-    sudo vi /etc/hosts
-    ```
+```
+sudo vi /etc/hosts
+```
     
 - **Adicione o mapeamento do IP.**
     
     Inclua a linha abaixo no final do arquivo:
     
-    ```
-    127.0.0.1 sandbox-tdp22.tecnisys.com.br
-    ```
+```
+127.0.0.1 sandbox-tdp22.tecnisys.com.br
+```
     
 - **Salve e feche o arquivo.**
     
@@ -41,9 +41,9 @@ No caso de redirecionamento de portas de uma VM, essa configuração permite ace
     
     O arquivo está localizado em:
     
-    ```
-    C:\Windows\System32\drivers\etc\hosts
-    ```
+```
+C:\Windows\System32\drivers\etc\hosts
+```
     
 - **Abra o arquivo com permissões administrativas.**
     - Clique com o botão direito no **Bloco de Notas** e selecione **Executar como administrador**.
@@ -52,9 +52,9 @@ No caso de redirecionamento de portas de uma VM, essa configuração permite ace
     
     Insira a linha abaixo no final do arquivo:
     
-    ```
-    127.0.0.1 sandbox-tdp22.tecnisys.com.br
-    ```
+```
+127.0.0.1 sandbox-tdp22.tecnisys.com.br
+```
     
     ![Captura de Tela (80).png](Captura_de_Tela_80.png)
     

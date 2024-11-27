@@ -1,4 +1,6 @@
-# **Configurando o VirtualBox**
+# **Criação do Sandbox TDP**
+Para criar o Sandbox, é necessário que o VirtualBox já esteja instalado e configurado corretamente. Com esse requisito atendido, podemos seguir com o processo de criação conforme descrito a seguir.
+
 
 1. Abra o VirtualBox e vá em `Arquivo → Importar Appliance` ou use o atalho `Ctrl + I`.
     
@@ -24,8 +26,7 @@
     
     ![Captura de Tela (71).png](Captura_de_Tela_71.png)
     
-
-1. Espere a sandbox iniciar e exibir a tela inicial customizada.
+7. Espere a sandbox iniciar e exibir a tela inicial customizada.
     
     ![VirtualBox_TecnisysSandboxTDP2.2_12_11_2024_14_06_53.png](VirtualBox_TecnisysSandboxTDP2.2_12_11_2024_14_06_53.png)
     
