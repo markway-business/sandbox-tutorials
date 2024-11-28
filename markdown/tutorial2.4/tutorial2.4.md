@@ -27,7 +27,7 @@ sudo vi /etc/hosts
     Inclua a linha abaixo no final do arquivo:
     
 ```
-127.0.0.1 sandbox-tdp22.tecnisys.com.br
+127.0.0.1 sandbox-tdp22.tecnisys.com.br  sandbox-tdp22
 ```
     
 - **Salve e feche o arquivo.**
@@ -53,7 +53,7 @@ C:\Windows\System32\drivers\etc\hosts
     Insira a linha abaixo no final do arquivo:
     
 ```
-127.0.0.1 sandbox-tdp22.tecnisys.com.br
+127.0.0.1 sandbox-tdp22.tecnisys.com.br  sandbox-tdp22
 ```
     
     ![Captura de Tela (80).png](Captura_de_Tela_80.png)

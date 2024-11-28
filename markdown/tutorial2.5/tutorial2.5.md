@@ -39,7 +39,7 @@ A página inicial da sandbox oferece um botão chamado **Quick Links**, que dire
 Os links rápidos fornecem acesso a serviços integrados da plataforma TDP, permitindo que você interaja com ferramentas importantes para gerenciamento e análise de dados.
 
 ![Captura de Tela (73).png](Captura_de_Tela_73.png)
-
+## **Acesso ao Ambari:**
 Para realizar o login no Ambari, use as credenciais padrão fornecidas com a sandbox. 
 - Usuário `admin`
 - Senha `admin`
