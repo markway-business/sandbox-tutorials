@@ -1,4 +1,4 @@
-# Configuração de Portas para Sandbox TDP
+# Configuração de Redirecionamento de Portas da Sandbox
 
 A tabela abaixo lista os serviços e as respectivas portas de saída utilizadas no sandbox TDP. Essa configuração permite o acesso aos serviços hospedados na máquina virtual.
 
@@ -39,3 +39,5 @@ A tabela abaixo lista os serviços e as respectivas portas de saída utilizadas 
 | CeleryFlowerUI | 5555 |
 
 Utilize essa tabela para configurar e acessar os serviços conforme necessário.
+
+Caso sua máquina já esteja utilizando alguma das portas configuradas para a sandbox, ela não será inicializada, e o VirtualBox apresentará um erro durante o processo, abortando a execução.
