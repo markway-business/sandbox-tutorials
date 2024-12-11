@@ -92,8 +92,34 @@ Os processadores no fluxo dependem de dois **Controller Services** configurados 
 | Configuração | Campo | Valor | Descrição |
 | --- | --- | --- | --- |
 | Properties | Script Engine | `Groovy` | Linguagem de script utilizada |
-|  | Script Body | **Ver script** | Lógica para mapear cabeçalhos e definir a variável `csv.header` |
+|  | Script Body | (definido abaixo) | Lógica para mapear cabeçalhos e definir a variável `csv.header` |
 | Relationships | success | - | Conexão para fluxo em caso de sucesso |
+
+*Script Body:*
+
+```
+def flowFile = session.get();
+if (!flowFile) return;
+
+def headers = [
+    'SalesOrderHeader': 'SalesOrderID;RevisionNumber;OrderDate;DueDate;ShipDate;Status;OnlineOrderFlag;SalesOrderNumber;PurchaseOrderNumber;AccountNumber;CustomerID;SalesPersonID;TerritoryID;BillToAddressID;ShipToAddressID;ShipMethodID;CreditCardID;CreditCardApprovalCode;CurrencyRateID;SubTotal;TaxAmt;Freight;TotalDue;Comment;rowguid;ModifiedDate',
+    'SalesOrderDetail': 'SalesOrderID;SalesOrderDetailID;CarrierTrackingNumber;OrderQty;ProductID;SpecialOfferID;UnitPrice;UnitPriceDiscount;LineTotal;rowguid;ModifiedDate',
+    'SalesPerson': 'BusinessEntityID;TerritoryID;SalesQuota;Bonus;CommissionPct;SalesYTD;SalesLastYear;rowguid;ModifiedDate',
+    'Product': 'ProductID;Name;ProductNumber;MakeFlag;FinishedGoodsFlag;Color;SafetyStockLevel;ReorderPoint;StandardCost;ListPrice;Size;SizeUnitMeasureCode;WeightUnitMeasureCode;Weight;DaysToManufacture;ProductLine;Class;Style;ProductSubcategoryID;ProductModelID;SellStartDate;SellEndDate;DiscontinuedDate;rowguid;ModifiedDate',
+    'Address': 'AddressID;AddressLine1;AddressLine2;City;StateProvinceID;PostalCode;SpatialLocation;rowguid;ModifiedDate'
+];
+
+def filenameNoExt = flowFile.getAttribute('filename_no_ext');
+def header = headers[filenameNoExt];
+
+if (header) {
+    flowFile = session.putAttribute(flowFile, 'csv.header', header);
+} else {
+    flowFile = session.putAttribute(flowFile, 'csv.header', 'Header not found');
+}
+
+session.transfer(flowFile, REL_SUCCESS);
+```
 
 
 **7. ReplaceText (2)**: Adiciona o cabeçalho correspondente ao arquivo na primeira linha.
