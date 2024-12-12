@@ -28,7 +28,7 @@ Para criar o Sandbox, é necessário que o VirtualBox já esteja instalado e con
     
 7. Espere a sandbox iniciar e exibir a tela inicial customizada.
     
-    ![VirtualBox_TecnisysSandboxTDP2.2_12_11_2024_14_06_53.png](VirtualBox_TecnisysSandboxTDP2.2_12_11_2024_14_06_53.png)
+    ![splashscreen.png](splashscreen.png)
     
 
 A sandbox está agora pronta para uso!
