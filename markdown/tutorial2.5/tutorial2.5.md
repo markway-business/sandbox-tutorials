@@ -25,9 +25,9 @@ Uma vez que a sandbox esteja em execução, você pode acessá-lo pelo navegador
 http://localhost:42080
 ```
 
-- **Caso tenha configurado um domínio local (como vimos no guia de `hosts`), use `sandbox-tdp22.tecnisys.com.br`:**
+- **Caso tenha configurado um domínio local (como vimos no guia de `hosts`), use `sandbox-tdp23.tecnisys.com.br`:**
 ```
-http://sandbox-tdp22.tecnisys.com.br:42080
+http://sandbox-tdp23.tecnisys.com.br:42080
 ```
 
 ### Acessar página inicial do TDP
@@ -59,7 +59,7 @@ Para usuários avançados, conecte-se ao terminal da sandbox via SSH na porta `2
 
 ```
 ssh -p 2122 devopstdp@localhost
-senha:tecnisystdp22
+senha:tecnisystdp23
 ```
 
 ![Captura de Tela (77).png](Captura_de_Tela_77.png)

@@ -91,7 +91,7 @@ A sandbox está agora pronta para uso!
     
     ```powershell
     ssh -p 2122 devopstdp@localhost
-    tecnisystdp22
+    tecnisystdp23
     ```
     
 3. **Inicialização de Serviços**
@@ -140,7 +140,7 @@ A sandbox está agora pronta para uso!
     
     ```powershell
     ssh -p 2122 devopstdp@localhost
-    tecnisystdp22
+    tecnisystdp23
     
     su - hdfs
     hdfs dfs -mkdir /bronze /silver /gold
@@ -219,7 +219,7 @@ Realiza a ultima limpeza e seleção dos dados que serão utilizados para criaç
     
     ```powershell
     ssh -p 2122 devopstdp@localhost
-    tecnisystdp22
+    tecnisystdp23
     
     su - hive
     hive

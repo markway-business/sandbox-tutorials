@@ -1,10 +1,10 @@
 # Configurando o Host Local com o Domínio TDP
 
-Ao configurar uma máquina virtual (VM) ou aplicações em ambientes locais, é altamente recomendado associar o domínio da máquina ao `localhost`. Isso facilita o redirecionamento de portas e a simulação de ambientes reais sem depender de servidores externos. Vamos aprender como configurar o arquivo `hosts` no Linux e no Windows para associar o IP `127.0.0.1` a um domínio como `sandbox-tdp22.tecnisys.com.br`.
+Ao configurar uma máquina virtual (VM) ou aplicações em ambientes locais, é altamente recomendado associar o domínio da máquina ao `localhost`. Isso facilita o redirecionamento de portas e a simulação de ambientes reais sem depender de servidores externos. Vamos aprender como configurar o arquivo `hosts` no Linux e no Windows para associar o IP `127.0.0.1` a um domínio como `sandbox-tdp23.tecnisys.com.br`.
 
 ## O que é o arquivo `hosts` e por que configurá-lo?
 
-O arquivo `hosts` é uma configuração local presente em sistemas operacionais como Linux e Windows. Ele serve para mapear nomes de domínio (como `sandbox-tdp22.tecnisys.com.br`) para endereços IP, substituindo a necessidade de uma consulta DNS.
+O arquivo `hosts` é uma configuração local presente em sistemas operacionais como Linux e Windows. Ele serve para mapear nomes de domínio (como `sandbox-tdp23.tecnisys.com.br`) para endereços IP, substituindo a necessidade de uma consulta DNS.
 
 No caso de redirecionamento de portas de uma VM, essa configuração permite acessar serviços locais ou de uma máquina virtual como se fossem hospedados em um domínio público. Isso é útil para:
 
@@ -27,7 +27,7 @@ sudo vi /etc/hosts
     Inclua a linha abaixo no final do arquivo:
     
 ```
-127.0.0.1 sandbox-tdp22.tecnisys.com.br  sandbox-tdp22
+127.0.0.1 sandbox-tdp23.tecnisys.com.br  sandbox-tdp23
 ```
     
 - **Salve e feche o arquivo.**
@@ -53,7 +53,7 @@ C:\Windows\System32\drivers\etc\hosts
     Insira a linha abaixo no final do arquivo:
     
 ```
-127.0.0.1 sandbox-tdp22.tecnisys.com.br  sandbox-tdp22
+127.0.0.1 sandbox-tdp23.tecnisys.com.br  sandbox-tdp23
 ```
     
     ![Captura de Tela (80).png](Captura_de_Tela_80.png)

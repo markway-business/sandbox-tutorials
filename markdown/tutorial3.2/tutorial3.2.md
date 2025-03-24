@@ -69,7 +69,7 @@ Acesse o HDFS e configure os diretórios necessários:
 
 ```
 ssh -p 2122 devopstdp@localhost
-Senha: tecnisystdp22 
+Senha: tecnisystdp23 
 ```
 2. Eleve os privilégios para o usuário **hdfs**:  
 ```

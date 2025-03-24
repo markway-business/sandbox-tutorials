@@ -12,7 +12,7 @@ Antes de iniciar, conecte-se ao ambiente onde o Hive está configurado:
 
 ```
 ssh -p 2122 devopstdp@localhost
-Senha: tecnisystdp22 
+Senha: tecnisystdp23 
 ```
 2. Troque para o usuário `hive`:  
 ```
@@ -52,14 +52,10 @@ Após criar a tabela, valide se a tabela foi criada corretamente:
 ```
 show tables;
 ```
-    ![image1](image1.png)
-
 2. Execute o seguinte comando para verificar a descrição da tabela:
 ```
 desc gold_product_tb;
 ```
-    ![image2](image2.png)
-
 3. Execute o seguinte e valide se os dados estão acessíveis:
 ```
 select * from gold_product_tb limit 10;

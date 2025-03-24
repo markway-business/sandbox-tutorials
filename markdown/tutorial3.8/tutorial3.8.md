@@ -8,13 +8,13 @@ O Apache Superset é uma poderosa ferramenta open-source que permite criar visua
 ## Acessando o Apache Superset
 Para começar, acesse o Apache Superset através do link abaixo:  
 
-[Superset Sandbox - Tecnisys](http://sandbox-tdp22.tecnisys.com.br:9088/login/)  
+[Superset Sandbox - Tecnisys](http://sandbox-tdp23.tecnisys.com.br:9088/login/)  
 
 
 Credenciais de acesso:  
 ```
 Login: admin
-Senha: tecnisystdp22
+Senha: tecnisystdp23
 ```
 
 Você pode importar um dashboard completo a partir dos **Recursos Disponíveis** mencionados em um tutorial anterior. No entanto, neste guia, vamos demonstrar passo a passo como conectar o Hive ao Superset e criar gráficos e dashboards personalizados.
