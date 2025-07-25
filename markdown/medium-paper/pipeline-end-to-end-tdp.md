@@ -1,12 +1,19 @@
-# Relatório de Negócios Automatizado
+# Utilizando Tecnisys TDP Sandbox - Pipeline end-to-end de relatório de indicadores de produto utilizando Nifi e SuperSet
+ 
 
 ## 1. Introdução
 
-Relatórios de negócios devem ser rápidos, claros e atualizados. Como engenheiro de dados, sempre busquei formas de tornar esse processo mais eficiente. Com isso em mente, criei este projeto para demonstrar, de ponta a ponta, a construção de um pipeline moderno utilizando a Tecnisys Data Platform (TDP).
+Todo este projeto foi desenvolvido no **Sandbox do TDP** ([https://docs.tecnisys.com.br/tdp/commons/sandbox](https://docs.tecnisys.com.br/tdp/commons/sandbox)), que oferece um ambiente completo e integrado voltado para experimentação e desenvolvimento com dados.
 
-O TDP é uma plataforma Open Source que reúne diversas ferramentas integradas para ingestão, transformação, governancia, análise e visualização de dados. Ele permite orquestrar todo o fluxo de engenharia de dados em um único ambiente.
+![Diagrama de fluxo de trabalho](sandbox.png)
 
-A ideia era simples: simular dados realistas de produtos, limpá-los e transformá-los usando as ferramentas integradas do TDP, e criar um dashboard voltado para stakeholders que fosse atualizado automaticamente. Todo este projeto foi desenvolvido no **Sandbox do TDP** ([https://docs.tecnisys.com.br/tdp/commons/sandbox](https://docs.tecnisys.com.br/tdp/commons/sandbox)), que oferece um ambiente completo e integrado para experimentação e desenvolvimento.
+*Figura 1: Tela inicial da Sandbox TDP*
+
+Relatórios de negócios precisam ser rápidos, objetivos e sempre atualizados. Como engenheiro de dados, estou constantemente em busca de maneiras de tornar esse processo mais eficiente. Pensando nisso, desenvolvi este projeto para demonstrar, de ponta a ponta, a construção de um pipeline moderno utilizando a Tecnisys Data Platform (TDP).
+
+O TDP é uma plataforma open source que integra diversas ferramentas para ingestão, transformação, governança, análise e visualização de dados. Com ela, é possível orquestrar todo o fluxo de engenharia de dados em um único ambiente, de forma prática e escalável.
+
+A ideia era simples: simular dados realistas de produtos, limpá-los e transformá-los usando as ferramentas integradas do TDP, e criar um dashboard voltado para stakeholders que fosse atualizado automaticamente.
 
 O TDP oferece uma experiência perfeita ao lidar com uma variedade de ferramentas e funcionalidades, permitindo que o gestor se concentre no que realmente importa: seus dados. A plataforma é projetada para atender às necessidades de tratamento de dados, independentemente da escala ou complexidade, proporcionando um ecossistema integrado que facilita todo o processo de engenharia de dados.
 
@@ -28,7 +35,7 @@ Ao final, consegui um sistema funcional que reflete o tipo de infraestrutura de 
 
 ![Diagrama de fluxo de trabalho](workflow_diagram.png)
 
-*Figura 1: Diagrama de fluxo de trabalho*
+*Figura 2: Diagrama de fluxo de trabalho*
 
 
 ### Descrição do Caso de Uso
@@ -60,7 +67,7 @@ Para simular um ambiente de relatórios realista, a arquitetura do pipeline de d
 
 ![Diagrama de fluxo de trabalho](product-data-schema.png)
 
-*Figura 2: Schema de dados do produto*
+*Figura 3: Schema de dados do produto*
 
 ### Camadas do Pipeline
 
@@ -108,7 +115,7 @@ O primeiro fluxo no NiFi é responsável por mover os dados brutos do diretório
 
 ![nifi-schema-01](nifi-01.png)
 
-*Figura 3: Processadores no NiFi para a camada Processed*
+*Figura 4: Processadores no NiFi para a camada Processed*
 
 Ao final deste processo, o arquivo `Product.csv` estará organizado por data, pronto para ser movido para a camada Bronze no HDFS.
 
@@ -128,7 +135,7 @@ Após a organização inicial dos arquivos, o próximo fluxo no NiFi move os dad
 
 ![nifi-schema-02](nifi-02.png)
 
-*Figura 4: Processadores no NiFi para a camada Bronze*
+*Figura 5: Processadores no NiFi para a camada Bronze*
 
 Com a conclusão deste fluxo, os dados brutos estão seguramente armazenados na camada Bronze do HDFS, prontos para as próximas etapas de transformação e refinamento nas camadas Silver e Gold.
 
@@ -157,7 +164,7 @@ O fluxo de transformação envolve uma sequência de processadores que realizam 
 
 ![nifi-schema-03](nifi-03.png)
 
-*Figura 5: Processadores no NiFi para a camada Silver*
+*Figura 6: Processadores no NiFi para a camada Silver*
 
 #### Controller Services Essenciais:
 
@@ -185,7 +192,7 @@ A camada Gold representa a etapa final do pipeline de dados, onde as informaçõ
 
 ![nifi-schema-04](nifi-04.png)
 
-*Figura 6: Processadores no NiFi para a camada Gold*
+*Figura 7: Processadores no NiFi para a camada Gold*
 
 Com a conclusão deste fluxo, os dados na camada Gold estão limpos, organizados e otimizados, prontos para serem consumidos por ferramentas analíticas e de visualização, como o Superset.
 
@@ -277,7 +284,7 @@ Com os gráficos e tabelas configurados, eles são combinados em um dashboard in
 
 ![superset-dashboard](superset-dashboard.png)
 
-*Figura 7. Dashboard no Superset*
+*Figura 8. Dashboard no Superset*
 
 Este dashboard é uma ferramenta essencial para equipes de estoque, vendas, marketing e executivos, fornecendo insights sobre tendências de mercado, preferências de clientes e a relação entre capital imobilizado e demanda. Ele facilita a identificação de padrões e oportunidades, como ajustes no planejamento de produção, campanhas para produtos premium e estratégias para otimizar o estoque e reduzir custos. Seu valor reside em centralizar informações críticas para tomadas de decisão rápidas e assertivas, garantindo melhores resultados financeiros e maior agilidade na gestão.
 
